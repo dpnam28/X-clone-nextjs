@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import LeftBar from "@/components/LeftBar";
+import RightBar from "@/components/RightBar";
 
 export const metadata: Metadata = {
   title: "X",
@@ -13,9 +15,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-      >
-        {children}
+      <body>
+        <div className="flex justify-between max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl xxl:max-w-screen-xxl mx-auto">
+          <div className="px-2 xsm:px-4 xxl:px-8 test-border">
+            <LeftBar />
+          </div>
+          <div className="px-2 flex-1 lg:max-w-[600px] border-x-1 border-bordergray">
+            {children}
+          </div>
+          <div className="px-2 hidden lg:flex ml-4 xl:ml-8 flex-1 test-border">
+            <RightBar />
+          </div>
+        </div>
       </body>
     </html>
   );

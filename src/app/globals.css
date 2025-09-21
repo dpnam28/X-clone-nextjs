@@ -5,3 +5,24 @@ body {
   background: black;
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@theme {
+  --breakpoint-xsm: 500px;
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 690px;
+  --breakpoint-lg: 990px;
+  --breakpoint-xl: 1080px;
+  --breakpoint-xxl: 1265px;
+  --text-gray: #71767b;
+  --text-grayLight: #e7e9ea;
+  --color-borderGray: #2f3336;
+  --color-iconBlue: #1d9bf0;
+  --color-iconGreen: #00ba7c;
+  --color-iconPink: #f91880;
+}
+
+@layer components {
+  .test-border {
+    @apply border border-gray-500 h-screen;
+  }
+}
