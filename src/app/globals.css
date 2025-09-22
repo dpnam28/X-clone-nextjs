@@ -25,4 +25,7 @@ body {
   .test-border {
     @apply border border-gray-500 h-screen;
   }
+  .hover-leftbar {
+    @apply hover:bg-[#181818];
+  }
 }

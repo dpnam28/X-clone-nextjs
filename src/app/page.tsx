@@ -1,5 +1,9 @@
-import Image from "next/image";
+import ImageKit from "@/components/Image";
 
-export default function Home() {
-  return <>Homepage</>;
+export default function Page() {
+  return (
+    <>
+      <ImageKit src="general/avatar.png" alt="" width={100} height={200} />
+    </>
+  );
 }
