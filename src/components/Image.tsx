@@ -1,4 +1,3 @@
-//import Image from 'next/image'
 import { Image } from "@imagekit/next";
 
 type ImageType = {
@@ -17,7 +16,7 @@ export default function ImageKit({
 }: ImageType) {
   return (
     <Image
-      urlEndpoint={process.env.IMAGEKIT_URL_ENDPOINT!}
+      urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT!}
       src={src}
       width={width}
       height={height}

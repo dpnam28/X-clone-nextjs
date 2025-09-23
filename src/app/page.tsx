@@ -1,7 +1,6 @@
 import Feed from "@/components/MainThread/Feed";
 import Share from "@/components/MainThread/Share";
 import Link from "next/link";
-
 export default function Page() {
   return (
     <>
