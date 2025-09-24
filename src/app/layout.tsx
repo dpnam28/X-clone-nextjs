@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import LeftBar from "@/components/LeftBar";
-import RightBar from "@/components/RightBar";
+import RightBar from "@/components/RightBar/RightBar";
 
 export const metadata: Metadata = {
   title: "X",

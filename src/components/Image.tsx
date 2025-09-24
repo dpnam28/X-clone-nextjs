@@ -22,6 +22,7 @@ export default function ImageKit({
       height={height}
       alt={alt}
       className={className}
+      quality={50}
     />
   );
 }
