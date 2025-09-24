@@ -30,9 +30,11 @@ export const shareAction = async (
           fileName: file.name,
           folder: "/x-clone/posts", // Specify the folder in ImageKit media library
           useUniqueFileName: true,
-          transformation: {
-            pre: transformation,
-          },
+          ...(file.type.includes("image") && {
+            transformation: {
+              pre: transformation,
+            },
+          }),
           customMetadata: {
             sensitive: imageSettings.sensitive,
           },

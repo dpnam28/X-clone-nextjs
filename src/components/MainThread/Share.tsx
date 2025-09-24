@@ -52,7 +52,7 @@ const Share = () => {
         />
 
         {/* Preview image */}
-        {previewURL && (
+        {media?.type.includes("image") && previewURL && (
           <div className="relative rounded-xl overflow-hidden">
             <Image src={previewURL} width={500} height={500} alt="" />
             <div
@@ -60,6 +60,24 @@ const Share = () => {
               className="absolute top-2 left-2 bg-black/75 text-white py-1 px-4 rounded-full font-bold text-sm cursor-pointer"
             >
               Edit
+            </div>
+            <div
+              className="absolute right-2 top-2 bg-black/50 text-white size-8 flex items-center justify-center rounded-full cursor-pointer font-bold text-sm"
+              onClick={() => setMedia(null)}
+            >
+              X
+            </div>
+          </div>
+        )}
+
+        {media?.type.includes("video") && previewURL && (
+          <div className="relative">
+            <video src={previewURL} controls />
+            <div
+              className="absolute right-2 top-2 bg-black/50 text-white size-8 flex items-center justify-center rounded-full cursor-pointer font-bold text-sm"
+              onClick={() => setMedia(null)}
+            >
+              X
             </div>
           </div>
         )}
@@ -82,6 +100,7 @@ const Share = () => {
               className="hidden"
               id="file"
               name="file"
+              accept="image/*,video/*"
             />
             <label htmlFor="file" className="cursor-pointer">
               <ImageKit src="icons/image.svg" width={20} height={20} alt="" />

@@ -1,6 +1,7 @@
 import { imagekit } from "@/utils/variables";
 import ImageKit from "../Image";
 import PostInteractions from "./PostInteractions";
+import { VideoKit } from "../Video";
 
 interface fileDetailsResponse {
   width: number;
@@ -22,7 +23,7 @@ const Post = async () => {
     });
   };
 
-  const fileDetails = await getFileDetails("68d26ac25c7cd75eb8c18d5e");
+  const fileDetails = await getFileDetails("68d40bf45c7cd75eb8ec6a3a");
 
   return (
     <div className="border-y-1 border-borderGray p-4">
@@ -61,7 +62,7 @@ const Post = async () => {
             Consequuntur, quam.
           </p>
 
-          {fileDetails && (
+          {fileDetails && fileDetails.fileType === "image" ? (
             <ImageKit
               src={`${fileDetails.filePath.slice(
                 8,
@@ -72,7 +73,16 @@ const Post = async () => {
               alt=""
               className={fileDetails.customMetadata?.sensitive ? "blur-md" : ""}
             />
+          ) : (
+            <VideoKit
+              path={`${fileDetails.filePath.slice(
+                8,
+                fileDetails.filePath.length
+              )}`}
+              className={fileDetails.customMetadata?.sensitive ? "blur-md" : ""}
+            />
           )}
+
           <PostInteractions />
         </div>
       </div>
