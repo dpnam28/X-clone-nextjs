@@ -101,7 +101,7 @@ const LeftBar = () => {
 
         {/* Button post*/}
         <Link
-          href={"/"}
+          href={"/compose/post"}
           className="bg-white text-black rounded-full size-12 flex justify-center items-center xxl:hidden"
         >
           <ImageKit
@@ -112,7 +112,7 @@ const LeftBar = () => {
           ></ImageKit>
         </Link>
         <Link
-          href={"/"}
+          href={"/compose/post"}
           className="bg-white text-black rounded-full xxl:block hidden px-20 py-2 font-bold text-center"
         >
           Post

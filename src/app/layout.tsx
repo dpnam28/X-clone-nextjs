@@ -10,8 +10,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  modal,
 }: Readonly<{
   children: React.ReactNode;
+  modal: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -22,6 +24,7 @@ export default function RootLayout({
           </div>
           <div className="px-2 flex-1 lg:max-w-[600px] border-x-1 border-gray">
             {children}
+            {modal}
           </div>
           <div className="px-2 hidden lg:flex ml-4 xl:ml-8 flex-1">
             <RightBar />
