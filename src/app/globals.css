@@ -28,4 +28,16 @@ body {
   .hover-leftbar {
     @apply hover:bg-[#181818];
   }
+  .clerk-input {
+    @apply py-2 px-6 rounded-full text-black w-72 placeholder:text-sm bg-white;
+  }
+  .clerk-error {
+    @apply text-red-400 text-sm w-72;
+  }
+  .clerk-link {
+    @apply mt-2 text-sm underline w-72 text-center text-iconBlue cursor-pointer;
+  }
+  .clerk-submit {
+    @apply bg-iconBlue rounded-full p-2 text-white w-72 flex justify-center items-center gap-4 cursor-pointer font-semibold;
+  }
 }
