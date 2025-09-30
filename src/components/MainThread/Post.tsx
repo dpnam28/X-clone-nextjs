@@ -23,7 +23,7 @@ const Post = async ({ type }: { type?: "status" | "comment" }) => {
     });
   };
 
-  const fileDetails = await getFileDetails("68d40bf45c7cd75eb8ec6a3a");
+  const fileDetails = await getFileDetails("68d2897f5c7cd75eb8973bf8");
 
   return (
     <div className="border-y-1 border-borderGray p-4">
