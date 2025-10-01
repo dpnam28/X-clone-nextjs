@@ -11,19 +11,19 @@ interface fileDetailsResponse {
   customMetadata?: { sensitive: boolean };
 }
 
-const Post = async ({ type }: { type?: "status" | "comment" }) => {
-  const getFileDetails = async (
-    fileId: string
-  ): Promise<fileDetailsResponse> => {
-    return new Promise((resolve, reject) => {
-      imagekit.getFileDetails(fileId, function (error, result) {
-        if (!error) resolve(result as fileDetailsResponse);
-        else reject(error);
-      });
-    });
-  };
+const Post = ({ type }: { type?: "status" | "comment" }) => {
+  // const getFileDetails = async (
+  //   fileId: string
+  // ): Promise<fileDetailsResponse> => {
+  //   return new Promise((resolve, reject) => {
+  //     imagekit.getFileDetails(fileId, function (error, result) {
+  //       if (!error) resolve(result as fileDetailsResponse);
+  //       else reject(error);
+  //     });
+  //   });
+  // };
 
-  const fileDetails = await getFileDetails("68d2897f5c7cd75eb8973bf8");
+  // const fileDetails = await getFileDetails("68d2897f5c7cd75eb8973bf8");
 
   return (
     <div className="border-y-1 border-borderGray p-4">
@@ -98,26 +98,7 @@ const Post = async ({ type }: { type?: "status" | "comment" }) => {
             </p>
           </Link>
 
-          {fileDetails && fileDetails.fileType === "image" ? (
-            <ImageKit
-              src={`${fileDetails.filePath.slice(
-                8,
-                fileDetails.filePath.length
-              )}`}
-              width={fileDetails.width}
-              height={fileDetails.height}
-              alt=""
-              className={fileDetails.customMetadata?.sensitive ? "blur-md" : ""}
-            />
-          ) : (
-            <VideoKit
-              path={`${fileDetails.filePath.slice(
-                8,
-                fileDetails.filePath.length
-              )}`}
-              className={fileDetails.customMetadata?.sensitive ? "blur-md" : ""}
-            />
-          )}
+          <ImageKit src={`general/post.jpeg`} width={500} height={500} alt="" />
 
           {type === "status" && (
             <span className="text-sm text-gray">12:12 PM Sep 25, 2025</span>
