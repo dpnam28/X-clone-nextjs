@@ -59,6 +59,10 @@ export default function SignUpPage() {
             </Clerk.Connection>
             <div className="flex flex-col gap-4">
               Sign up with Credentials
+              <Clerk.Field name="username">
+                <Clerk.Input placeholder="username" className="clerk-input" />
+                <Clerk.FieldError className="clerk-error" />
+              </Clerk.Field>
               <Clerk.Field name="emailAddress" className="flex flex-col gap-2">
                 <Clerk.Input className="clerk-input" placeholder="E-mail" />
                 <Clerk.FieldError className="clerk-error" />
@@ -76,19 +80,7 @@ export default function SignUpPage() {
               </SignUp.Action>
             </div>
           </SignUp.Step>
-          <SignUp.Step name="continue" className="flex flex-col gap-4">
-            <Clerk.Field name="username">
-              <Clerk.Input placeholder="username" className="clerk-input" />
-              <Clerk.FieldError className="clerk-error" />
-            </Clerk.Field>
 
-            <SignUp.Action
-              submit
-              className="w-72 text-center text-iconBlue underline"
-            >
-              Continue
-            </SignUp.Action>
-          </SignUp.Step>
           <SignUp.Step name="verifications">
             <SignUp.Strategy name="email_code">
               <h1 className="text-sm mb-2">Check your e-mail</h1>
