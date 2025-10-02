@@ -13,7 +13,7 @@ export default function BoardLayout({
       <div className="px-2 xsm:px-4 xxl:px-8">
         <LeftBar />
       </div>
-      <div className="px-2 flex-1 lg:max-w-[600px] border-x-1 border-gray">
+      <div className="flex-1 lg:max-w-[600px] border-x-1 border-gray">
         {children}
         {modal}
       </div>
