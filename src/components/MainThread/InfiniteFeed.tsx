@@ -34,7 +34,7 @@ const InfiniteFeed = ({ userProfileId }: { userProfileId?: string }) => {
       endMessage={<p>No more posts to load.</p>}
     >
       {allPosts.map((post) => (
-        <Post key={post.id} />
+        <Post key={post.id} post={post} />
       ))}
     </InfiniteScroll>
   );
