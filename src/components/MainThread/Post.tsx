@@ -84,7 +84,9 @@ const Post = ({
                   }`}
                 >
                   <h1>{orginalPost.user.displayName}</h1>
-                  <span className="text-gray">{orginalPost.user.username}</span>
+                  <span className="text-gray">
+                    @{orginalPost.user.username}
+                  </span>
                   {type !== "status" && (
                     <span className="text-gray">
                       {" "}
@@ -112,7 +114,7 @@ const Post = ({
             <div className="flex justify-between">
               <div className="flex items-center gap-2 flex-wrap">
                 <h1>{orginalPost.user.displayName}</h1>
-                <span className="text-gray">{orginalPost.user.username}</span>
+                <span className="text-gray">@{orginalPost.user.username}</span>
                 <span className="text-gray">
                   {format(orginalPost.createdAt)}
                 </span>
