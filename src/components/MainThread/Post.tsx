@@ -131,7 +131,9 @@ const Post = ({
           )}
 
           {/* Text - Image */}
-          <Link href={"/username/status/1"}>{orginalPost.desc}</Link>
+          <Link href={`/${orginalPost.user.username}/status/${orginalPost.id}`}>
+            {orginalPost.desc}
+          </Link>
 
           {orginalPost.img && (
             <ImageKit
