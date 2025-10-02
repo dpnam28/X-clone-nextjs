@@ -9,7 +9,10 @@ const RightBar = () => {
   return (
     <div className="pt-4 flex flex-col gap-4 sticky top-0 h-max">
       <Search />
-      <ScrollArea className="h-[calc(100vh_-_5rem)] overflow-y-auto">
+      <ScrollArea
+        type="scroll"
+        className="h-[calc(100vh_-_5rem)] overflow-y-auto"
+      >
         <div className="pt-4 flex flex-col gap-4 sticky top-0 h-max">
           <PopularTags />
           <Recommendations />
